@@ -6,9 +6,11 @@ const FILES_TO_CACHE = [
    
     'Images/icons/favicon.ico',
     'Images/background2.jpg',
+    'Images/background.jpg',
     'Images/Instagram.png',
     'Images/logo3.png',
     'Images/whatsapp.jpeg',
+    "Images/icons/144.png",
     'styles.css',
     'bootstrap/css/bootstrap.min.css',
     'bootstrap/maxcdn/css/bootstrap.min.css',
@@ -18,7 +20,9 @@ const FILES_TO_CACHE = [
     'js/jquery-3.5.1.min.js',
     'js/popper.min.js',
     'js/popper.min.js.map',
-    'offline.html'
+    'offline.html',
+    'manifest.json',
+    'dados.json'
 
 ];
 
@@ -45,18 +49,40 @@ self.addEventListener('activate', (evt)=>{
     self.clients.claim();
 });
 
-self.addEventListener('fetch', (evt)=>{
-    // console.log('[ServiceWorker] Recebendo', evt.request.url);
-    if(evt.request.mode !== 'navigate'){
-        return;
-    }
+// self.addEventListener('fetch', (evt)=>{
+//     // console.log('[ServiceWorker] Recebendo', evt.request.url);
+//     if(evt.request.mode !== 'navigate'){
+//         return;
+//     }
     
-    evt.respondWith(fetch(evt.request).catch(()=>{
+//     evt.respondWith(fetch(evt.request).catch(()=>{
         
-        return caches.open(CACHE_NAME).then((cache)=>{
+//         return caches.open(CACHE_NAME).then((cache)=>{
             
-             return cache.match('offline.html');
-        })
+//              return cache.match('offline.html');
+//         })
         
-    }))
+//     }))
+// });
+
+self.addEventListener('fetch', (evt) => {
+    // console.log('[ServiceWorker] Recebendo', evt.request.url);
+ 
+    if (evt.request.mode !== 'navigate') {
+        evt.respondWith(
+            caches.match(evt.request).then(function (response) {
+                return response;
+            })
+        );
+    } else {
+        evt.respondWith(
+            fetch(evt.request)
+                .catch(() => {
+                    return caches.open(CACHE_NAME)
+                        .then((cache) => {
+                            return cache.match('offline.html');
+                        });
+                })
+        );
+    }
 });
