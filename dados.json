@@ -1,0 +1,38 @@
+[
+    {
+        "Nome":"Esmaltação",
+        "Valor": "R$10,00"
+    },
+    {
+        "Nome":"Depilação axila",
+        "Valor": "R$15,00"
+    },
+    {
+        "Nome":"Depilação virília",
+        "Valor": "R$25,00"
+    },
+    {
+        "Nome":"Sombrancelha",
+        "Valor": "R$15,00"
+    },
+    {
+        "Nome":"Manicure e pedicure",
+        "Valor": "R$25,00"
+    },
+    {
+        "Nome":"Esfoliação",
+        "Valor": "R$10,00"
+    },
+    {
+        "Nome":"Maquiagem para festas",
+        "Valor": "R$35,00"
+    },
+    {
+        "Nome":"Hidratação de cabelo",
+        "Valor": "R$20,00"
+    },
+    {
+        "Nome":"Kit casamento",
+        "Valor": "R$200,00"
+    }   
+]

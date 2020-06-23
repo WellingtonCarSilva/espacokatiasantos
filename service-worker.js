@@ -26,7 +26,6 @@ self.addEventListener('install', (evt)=>{
     
     evt.waitUntil(
         caches.open(CACHE_NAME).then((cache)=>{
-            console.log("adicionando log");
             return cache.addAll(FILES_TO_CACHE);
         })
     )
@@ -47,7 +46,7 @@ self.addEventListener('activate', (evt)=>{
 });
 
 self.addEventListener('fetch', (evt)=>{
-    console.log('[ServiceWorker] Recebendo', evt.request.url);
+    // console.log('[ServiceWorker] Recebendo', evt.request.url);
     if(evt.request.mode !== 'navigate'){
         return;
     }
