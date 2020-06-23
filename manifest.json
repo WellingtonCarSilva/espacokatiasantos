@@ -1,0 +1,40 @@
+{
+    "name":"Espaço Katia Santos",
+    "short_name": "EKS",
+    "icons": [
+        {
+            "src": "Images/icons/128.png",
+            "sizes": "128x128",
+            "type": "image/png"
+        }, 
+        {
+            "src": "Images/icons/144.png",
+            "sizes": "144x144",
+            "type": "image/png"
+        }, 
+        {
+            "src": "Images/icons/152.png",
+            "sizes": "152x152",
+            "type": "image/png"
+        }, 
+        {
+            "src": "Images/icons/180.png",
+            "sizes": "180x180",
+            "type": "image/png"
+        }, 
+        {
+            "src": "Images/icons/256.png",
+            "sizes": "256x256",
+            "type": "image/png"
+        }, 
+        {
+            "src": "Images/icons/512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ],
+    "start_url": "index.html",
+    "display": "standalone",
+    "background_color": "#f08080",
+    "theme_color": "#b30059"
+}
